@@ -51,7 +51,7 @@
 	"bootdir=/boot\0" \
 	"bootfile=zImage\0" \
 	"usbtty=cdc_acm\0" \
-	"console=ttyO2,115200n8\0" \
+	"console=ttyS2,115200n8\0" \
 	"mpurate=auto\0" \
 	"optargs=\0" \
 	"vram=12M\0" \
