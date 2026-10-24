@@ -1,0 +1,21 @@
+if TARGET_PORTUXG20
+
+config SYS_BOARD
+	default "portuxg20"
+
+config SYS_VENDOR
+	default "taskit"
+
+config SYS_CONFIG_NAME
+	default "portuxg20"
+
+config PORTUXG20_VDDIOM_1V8
+	bool "Select 1.8 V for the EBI memory I/O (VDDIOMSEL = 0)"
+	default y
+	help
+	  The Stamp9G20 module powers its SDRAM/NAND bus (and the PIOC pins)
+	  from 1.8 V. The SoC resets with CCFG_EBICSA.VDDIOMSEL = 1 (3.3 V).
+	  Say y to clear the bit in the SPL before the SDRAM controller is
+	  set up. Say n to leave the reset value untouched.
+
+endif

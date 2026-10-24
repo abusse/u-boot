@@ -1,0 +1,71 @@
+// SPDX-License-Identifier: GPL-2.0+
+/*
+ * taskit PortuxG20: Stamp9G20 module (AT91SAM9G20, 64 MiB SDRAM,
+ * 128 MiB NAND) on the PortuxG20 carrier.
+ *
+ * U-Boot copy; Linux and barebox use at91-portuxg20.dts with the
+ * upstream at91sam9g20.dtsi.
+ */
+/dts-v1/;
+#include "at91sam9g20.dtsi"
+
+/ {
+	model = "taskit PortuxG20";
+	compatible = "taskit,portuxg20", "atmel,at91sam9g20", "atmel,at91sam9";
+
+	chosen {
+		bootph-all;
+		stdout-path = &dbgu;
+	};
+
+	memory {
+		reg = <0x20000000 0x4000000>;
+	};
+
+	clocks {
+		slow_xtal {
+			clock-frequency = <32768>;
+		};
+
+		main_xtal {
+			clock-frequency = <18432000>;
+		};
+	};
+};
+
+&dbgu {
+	bootph-all;
+	status = "okay";
+};
+
+&gpbr {
+	status = "okay";
+};
+
+&macb0 {
+	phy-mode = "rmii";
+	status = "okay";
+};
+
+&mmc0 {
+	pinctrl-0 = <&pinctrl_mmc0_clk
+		     &pinctrl_mmc0_slot0_cmd_dat0
+		     &pinctrl_mmc0_slot0_dat1_3>;
+	status = "okay";
+
+	slot@0 {
+		reg = <0>;
+		bus-width = <4>;
+	};
+};
+
+&nand0 {
+	nand-bus-width = <8>;
+	nand-ecc-mode = "soft";
+	status = "okay";
+};
+
+&usb0 {
+	num-ports = <2>;
+	status = "okay";
+};

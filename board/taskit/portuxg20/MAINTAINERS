@@ -1,0 +1,7 @@
+PORTUXG20 BOARD
+M:	Anselm Busse <anselm.busse@outlook.com>
+S:	Maintained
+F:	board/taskit/portuxg20/
+F:	include/configs/portuxg20.h
+F:	configs/portuxg20_defconfig
+F:	arch/arm/dts/at91sam9g20-portuxg20.dts

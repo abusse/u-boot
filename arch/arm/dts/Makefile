@@ -2,6 +2,7 @@
 
 dtb-$(CONFIG_TARGET_SMARTWEB) += at91sam9260-smartweb.dtb
 dtb-$(CONFIG_TARGET_TAURUS) += at91sam9g20-taurus.dtb
+dtb-$(CONFIG_TARGET_PORTUXG20) += at91sam9g20-portuxg20.dtb
 dtb-$(CONFIG_TARGET_CORVUS) += at91sam9g45-corvus.dtb
 dtb-$(CONFIG_TARGET_GURNARD) += at91sam9g45-gurnard.dtb
 dtb-$(CONFIG_TARGET_SCM3005) += ax3005-scm3005.dtb

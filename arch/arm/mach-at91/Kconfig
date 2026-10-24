@@ -303,6 +303,15 @@ config TARGET_TAURUS
 	select SUPPORT_SPL
 	imply CMD_DM
 
+config TARGET_PORTUXG20
+	bool "taskit PortuxG20"
+	select AT91SAM9G20
+	select DM
+	select DM_GPIO
+	select DM_SERIAL
+	select SUPPORT_SPL
+	imply CMD_DM
+
 config TARGET_SMARTWEB
 	bool "Support smartweb"
 	select AT91SAM9260
@@ -379,5 +388,6 @@ source "board/ronetix/pm9g45/Kconfig"
 source "board/siemens/corvus/Kconfig"
 source "board/siemens/taurus/Kconfig"
 source "board/siemens/smartweb/Kconfig"
+source "board/taskit/portuxg20/Kconfig"
 
 endif
